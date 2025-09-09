@@ -1,0 +1,38 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.btn {
+    width: 101px;
+    height: 38px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $light;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 0;
+    clip-path: polygon(10% 0%,
+            /* верхний левый сдвинут вправо */
+            100% 0%,
+            /* верхний правый */
+            100% 90%,
+            /* нижний правый сдвинут вверх */
+            90% 100%,
+            /* нижний правый обрезан */
+            0% 100%,
+            /* нижний левый */
+            0% 10%
+            /* верхний левый обрезан */
+        );
+
+
+    &--red {
+        background-color: $red;
+    }
+
+    &--grey {
+        background-color: $light-gray;
+    }
+}

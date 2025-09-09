@@ -1,6 +1,411 @@
-@use "/src/sass/base/variables.scss";
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
 
 .characters {
-    background-color: light;
-    min-height: 100vh;
+    padding-top: clamp(24px, 4vw, 50px);
+    padding-bottom: clamp(24px, 4vw, 43px);
+    position: relative;
+
+    &__top {
+        display: flex;
+    }
+
+    &-info {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.25);
+        padding: 35px 35px 35px 40px;
+
+        &__portrait {
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        &__text {
+            max-width: clamp(265px, 23.4375vw, 450px);
+            font-weight: 400;
+            font-size: clamp(14px, calc(1.875vw - 16px), 20px);
+            line-height: 1.4;
+        }
+
+        &__buttons {
+            margin-top: 13px;
+            display: flex;
+            gap: 30px;
+        }
+    }
+
+    &-cta {
+        padding: 35px 0 36px 40px;
+        width: 50%;
+        position: relative;
+        background-color: $black-gray;
+
+        &__text {
+            max-width: clamp(375px, calc(54.6875vw - 500px), 550px);
+            font-weight: 700;
+            font-size: clamp(24px, calc(3.125vw - 26px), 34px);
+            color: $light;
+        }
+
+        &__subtext {
+            margin-top: 45px;
+            color: $light;
+            font-weight: 700;
+            font-size: clamp(24px, calc(3.125vw - 26px), 34px);
+        }
+
+        &__btn {
+            margin-top: 20px;
+
+        }
+
+        &__image {
+            position: absolute;
+            max-width: 202px;
+            right: -23px;
+            bottom: 10px;
+        }
+    }
+
+    &__body {
+        margin-top: 50px;
+        display: flex;
+        gap: 25px;
+    }
+
+    &__content {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
+        column-gap: 25px;
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 318px;
+        background-color: $black-gray;
+        color: $light;
+        font-weight: 700;
+        font-size: 22px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &__img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &__name {
+            padding: 15px;
+            color: $light;
+            font-weight: 700;
+            font-size: 22px;
+            text-transform: uppercase;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        &:hover {
+            box-shadow: 0 5px 20px $red;
+        }
+    }
+
+    &-desc {
+        width: 45%;
+        height: 100%;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+
+        &__title {
+            margin-top: 25px;
+        }
+
+        &__empty {
+            padding: 33px 25px 25px 25px;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            flex-wrap: wrap;
+            column-gap: 9px;
+        }
+
+        &__avatar-skeleton {
+            border: 20px solid $silver;
+            border-radius: 100%;
+            width: 14px;
+            height: 40px;
+        }
+
+        &__name-skeleton {
+            width: 86%;
+            height: 16px;
+            background-color: $silver;
+        }
+
+        &__details {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        &__line-skeleton {
+            width: 100%;
+            background-color: $silver;
+            height: 35px;
+        }
+    }
+
+    &__btn {
+        margin: 45px 0 0 0;
+        width: 170px;
+    }
+
+    &__vision-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+    }
+}
+
+
+
+@include respond(lg) {
+    .characters {
+        &-info {
+            gap: 20px;
+            padding: 30px;
+
+            &__portrait {
+                width: 150px;
+                height: 150px;
+            }
+
+            &__buttons {
+                gap: 20px;
+            }
+        }
+
+        &-cta {
+            padding: 30px 0 30px 30px;
+
+            &__image {
+                max-width: 160px;
+
+                right: -10px;
+            }
+
+            &__subtext {
+                margin-top: 29px;
+            }
+        }
+    }
+}
+
+@include respond(md) {
+    .characters {
+
+        &__top {
+            flex-direction: column;
+        }
+
+        &-info,
+        &-cta {
+            width: 100%;
+        }
+
+        &-info {
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+
+            &__portrait {
+                width: 160px;
+                height: 160px;
+            }
+
+            &__wrapper {
+                align-items: center;
+                text-align: center;
+            }
+
+            &__buttons {
+                justify-content: center;
+            }
+        }
+
+        &-cta {
+            padding: 30px 20px 30px 20px;
+            text-align: center;
+
+            &__text {
+                margin: 0 auto;
+            }
+
+            &__subtext {
+                margin-top: 20px;
+            }
+
+            &__image {
+                position: static;
+                margin: 20px auto 0;
+                display: block;
+            }
+
+            &__btn {
+                margin-top: 20px;
+            }
+        }
+
+        &__body {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__content,
+        &-desc {
+            width: 100%;
+        }
+
+        &__btn {
+            margin-top: 35px;
+        }
+
+        &__vision-img {
+            display: none;
+        }
+    }
+}
+
+@include respond(sm) {
+    .characters {
+        &-info {
+            padding: 25px;
+            box-shadow: none;
+
+            &__portrait {
+                width: 140px;
+                height: 140px;
+            }
+
+            &__buttons {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: stretch;
+            }
+
+            &__btn {
+                width: 100%;
+            }
+        }
+
+        &-cta {
+            padding: 25px 15px;
+
+            &__text,
+            &__subtext {
+                font-size: 20px;
+            }
+
+            &__image {
+                max-width: 160px;
+            }
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 20px;
+        }
+
+        &-card {
+            height: auto;
+        }
+
+        &__btn {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        &-desc {
+            &__empty {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            &__name-skeleton {
+                width: 100%;
+            }
+
+            &__avatar-skeleton {
+                border-width: 10px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+@include respond(xs) {
+    .characters {
+        &-info {
+            padding: 20px;
+
+            &__portrait {
+                width: 120px;
+                height: auto;
+            }
+        }
+
+        &-cta {
+            padding: 20px 15px;
+
+            &__text,
+            &__subtext {
+                font-size: 18px;
+            }
+
+            &__image {
+                max-width: 130px;
+            }
+        }
+
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 15px;
+        }
+
+        &-card__name {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+    }
 }

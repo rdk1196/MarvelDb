@@ -1,0 +1,18 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.title-h2 {
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: clamp(20px, 2.2vw, 24px);
+    color: $dark;
+    text-transform: uppercase;
+}
+
+.title-h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 18px;
+    color: $dark;
+    text-align: center;
+}
