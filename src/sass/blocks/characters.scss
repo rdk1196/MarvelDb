@@ -2,8 +2,7 @@
 @use "/src/sass/base/mixins.scss" as *;
 
 .characters {
-    padding-top: clamp(24px, 4vw, 50px);
-    padding-bottom: clamp(24px, 4vw, 43px);
+    padding-block: clamp(24px, 4vw, 50px);
     position: relative;
 
     &__top {

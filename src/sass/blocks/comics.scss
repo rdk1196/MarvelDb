@@ -1,0 +1,25 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.comics {
+    padding-block: clamp(24px, 4vw, 50px);
+
+    &-banner {
+        display: flex;
+        align-items: center;
+        padding-left: clamp(20px, 4vw, 45px);
+        padding-right: clamp(16px, 3vw, 25px);
+        background-color: $black-gray;
+
+        &__text {
+            margin-left: clamp(30px, 6vw, 83px);
+            flex: 1;
+            min-width: 0;
+            color: $light;
+            font-weight: 700;
+            font-size: clamp(18px, 2vw, 24px);
+            letter-spacing: 0.5px;
+        }
+
+    }
+}
