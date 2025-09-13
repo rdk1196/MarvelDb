@@ -20,6 +20,52 @@
             font-size: clamp(18px, 2vw, 24px);
             letter-spacing: 0.5px;
         }
+    }
 
+    &__wrapper {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 55px;
+        column-gap: 67px;
+        justify-content: center;
+    }
+
+    &__item {
+        max-width: 225px;
+        cursor: pointer;
+    }
+
+    &-card {
+        &__img {
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 225 / 345;
+            object-fit: cover;
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25)
+        }
+
+        &__title {
+            margin-top: 10px;
+            text-align: left;
+            font-size: clamp(12px, 1.2vw, 14px);
+        }
+
+        &__price {
+            margin-top: 5px;
+            font-weight: 700;
+            font-size: clamp(12px, 1.2vw, 14px);
+            color: $price;
+        }
+    }
+
+    &__button {
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn {
+        width: 170px;
     }
 }
