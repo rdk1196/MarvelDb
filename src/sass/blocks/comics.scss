@@ -17,7 +17,7 @@
             min-width: 0;
             color: $light;
             font-weight: 700;
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(24px, calc(3.125vw - 26px), 34px);
             letter-spacing: 0.5px;
         }
     }
@@ -29,6 +29,7 @@
         row-gap: 55px;
         column-gap: 67px;
         justify-content: center;
+        justify-items: center;
     }
 
     &__item {
@@ -48,13 +49,13 @@
         &__title {
             margin-top: 10px;
             text-align: left;
-            font-size: clamp(12px, 1.2vw, 14px);
+            font-size: clamp(14px, calc(1.875vw - 16px), 20px);
         }
 
         &__price {
             margin-top: 5px;
             font-weight: 700;
-            font-size: clamp(12px, 1.2vw, 14px);
+            font-size: clamp(14px, calc(1.875vw - 16px), 20px);
             color: $price;
         }
     }
@@ -67,5 +68,95 @@
 
     &__btn {
         width: 170px;
+    }
+}
+
+@include respond(xl) {
+    .comics {
+        &__wrapper {
+            column-gap: 50px;
+        }
+    }
+}
+
+@include respond(lg) {
+    .comics {
+        &-banner {
+            padding-inline: 25px;
+        }
+
+        &__wrapper {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 40px;
+
+        }
+
+        &__item {
+            max-width: 200px;
+        }
+
+    }
+}
+
+@include respond(md) {
+    .comics {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+        }
+
+        &__item {
+            max-width: 180px;
+        }
+    }
+}
+
+@include respond(sm) {
+    .comics {
+        &__wrapper {
+            column-gap: 20px;
+        }
+
+        &__item {
+            max-width: 160px;
+        }
+
+        &__button {
+            margin-top: 35px;
+        }
+
+        &__btn {
+            width: 150px;
+        }
+    }
+}
+
+@include respond(xs) {
+    .comics {
+
+        &-banner {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            padding-inline: 16px;
+        }
+
+        &__wrapper {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+
+        &__item {
+            max-width: 100%;
+        }
+
+        &__button {
+            margin-top: 35px;
+        }
+
+        &__btn {
+            width: 100%;
+        }
     }
 }
